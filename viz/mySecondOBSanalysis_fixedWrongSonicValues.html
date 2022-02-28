@@ -1,0 +1,2181 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_a94ca3b4e1b3486297ff94fd0f3460b0 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_a94ca3b4e1b3486297ff94fd0f3460b0" ></div>
+        
+</body>
+<script>    
+    
+            var map_a94ca3b4e1b3486297ff94fd0f3460b0 = L.map(
+                "map_a94ca3b4e1b3486297ff94fd0f3460b0",
+                {
+                    center: [52.49095459724138, 13.424644569655173],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 14,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_cda5015c81a44fa48faa1aa43eeb2667 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e | Erm\u00f6glicht durch  \u003ca href=\"https://www.openbikesensor.org/\"\u003e  OpenBikeSensor \u003c/a\u003e| Erfassung \u0026 Komposition erstellt von TH Wildau FG Radverkehr", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_a94ca3b4e1b3486297ff94fd0f3460b0);
+        
+    
+            var tile_layer_03b542a596564e8da74dc57b24b87c0e = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {"attribution": "Tiles \u0026copy; Esri \u0026mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community | Erm\u00f6glicht durch  \u003ca href=\"https://www.openbikesensor.org/\"\u003e  OpenBikeSensor \u003c/a\u003e| Erfassung \u0026 Komposition erstellt von TH Wildau FG Radverkehr", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_a94ca3b4e1b3486297ff94fd0f3460b0);
+        
+    
+            var tile_layer_febd70d83a024123928cc922b5439011 = L.tileLayer(
+                "https://tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey=98ae7a41b031409bb9dbdad4b5720ae2",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors | \u0026copy; \u003ca href=\"https://www.opencyclemap.org/\"\u003eOpenCycleMap\u003c/a\u003e | Erm\u00f6glicht durch  \u003ca href=\"https://www.openbikesensor.org/\"\u003e  OpenBikeSensor \u003c/a\u003e| Erfassung \u0026 Komposition erstellt von TH Wildau FG Radverkehr", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_a94ca3b4e1b3486297ff94fd0f3460b0);
+        
+    
+            var feature_group_cf2faf3146e7452791bb44118dc2a4ae = L.featureGroup(
+                {}
+            ).addTo(map_a94ca3b4e1b3486297ff94fd0f3460b0);
+        
+    
+            var circle_0c3e51e720e3463a9d8409903fe8344b = L.circle(
+                [52.5108065, 13.4310639],
+                {"bubblingMouseEvents": true, "color": "#ff6d00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff6d00ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_0c3e51e720e3463a9d8409903fe8344b.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         95.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        51.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_58f332e53318470899334bff349c43b9 = L.circle(
+                [52.510742, 13.4311327],
+                {"bubblingMouseEvents": true, "color": "#ff5100ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff5100ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_58f332e53318470899334bff349c43b9.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         89.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        65.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_71a0fe7ae535413db7dc21652a3618d3 = L.circle(
+                [52.5107028, 13.4310426],
+                {"bubblingMouseEvents": true, "color": "#ff6800ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff6800ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_71a0fe7ae535413db7dc21652a3618d3.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         94.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        52.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_26b04b009d5a4095a7c37bce1b169ef6 = L.circle(
+                [52.510403, 13.4301058],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_26b04b009d5a4095a7c37bce1b169ef6.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         239.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        65.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_2fabeaae2e554f10ba4208faa583ebc6 = L.circle(
+                [52.5102504, 13.4300457],
+                {"bubblingMouseEvents": true, "color": "#ff8400ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff8400ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_2fabeaae2e554f10ba4208faa583ebc6.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         100.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        61.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_98900fb1112943d7b517f246d9cb2bbd = L.circle(
+                [52.5102113, 13.4300287],
+                {"bubblingMouseEvents": true, "color": "#ff5f00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff5f00ff", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 25, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_98900fb1112943d7b517f246d9cb2bbd.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         92.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        65.0<b><div style="height:3px;"><br></div>Confirmed :</b>        1<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_b15b70dac1d9467ebaf158fecca3e8db = L.circle(
+                [52.5100774, 13.4299517],
+                {"bubblingMouseEvents": true, "color": "#0b8600ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0b8600ff", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 25, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_b15b70dac1d9467ebaf158fecca3e8db.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         177.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        73.0<b><div style="height:3px;"><br></div>Confirmed :</b>        7<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_21fbc4fdfa9d4b45bd6df7728bb8ea91 = L.circle(
+                [52.5099177, 13.4298619],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 25, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_21fbc4fdfa9d4b45bd6df7728bb8ea91.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         238.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        65.0<b><div style="height:3px;"><br></div>Confirmed :</b>        7<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_fae13f3b9b2c4d128c9f2a421931d62e = L.circle(
+                [52.509752, 13.4297321],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 25, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_fae13f3b9b2c4d128c9f2a421931d62e.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         190.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        69.0<b><div style="height:3px;"><br></div>Confirmed :</b>        15<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_9a3ded734f25402e82a11a10bf16382e = L.circle(
+                [52.5097156, 13.4297027],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_9a3ded734f25402e82a11a10bf16382e.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         192.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        61.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_0df45626c6294bb583852a1e0e892e89 = L.circle(
+                [52.509567, 13.429551],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 25, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_0df45626c6294bb583852a1e0e892e89.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         185.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        60.0<b><div style="height:3px;"><br></div>Confirmed :</b>        15<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_17d4a1602d0c4a69bae2005bbe6bf055 = L.circle(
+                [52.5094786, 13.4294581],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 25, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_17d4a1602d0c4a69bae2005bbe6bf055.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         182.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        56.0<b><div style="height:3px;"><br></div>Confirmed :</b>        10<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_d34297318b6e421b8a9c0c95ea733373 = L.circle(
+                [52.5094304, 13.4293982],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_d34297318b6e421b8a9c0c95ea733373.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         188.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        63.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_3c42fd9d4cbf4eada67068a95435df68 = L.circle(
+                [52.507908, 13.4280228],
+                {"bubblingMouseEvents": true, "color": "#ffdc00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffdc00ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_3c42fd9d4cbf4eada67068a95435df68.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         129.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        58.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_a79793ab2b5f42ff9922ee20e4f552f3 = L.circle(
+                [52.5078918, 13.4280099],
+                {"bubblingMouseEvents": true, "color": "#ffda00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffda00ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_a79793ab2b5f42ff9922ee20e4f552f3.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         128.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        76.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_94554212e7a3413ba4b29cd0957eb713 = L.circle(
+                [52.5078776, 13.4279989],
+                {"bubblingMouseEvents": true, "color": "#ffcb00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffcb00ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_94554212e7a3413ba4b29cd0957eb713.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         122.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        60.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_9f021c98428d4c36af22bf26eb4038f7 = L.circle(
+                [52.5078626, 13.4280086],
+                {"bubblingMouseEvents": true, "color": "#ffe200ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffe200ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_9f021c98428d4c36af22bf26eb4038f7.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         131.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        63.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_6aa2fa5cd6584f05a1d05357da4a0255 = L.circle(
+                [52.5077978, 13.4279796],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_6aa2fa5cd6584f05a1d05357da4a0255.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         195.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        62.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_4c82a6f737a742dbb9e25880ddc33020 = L.circle(
+                [52.5077919, 13.4279505],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_4c82a6f737a742dbb9e25880ddc33020.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         196.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        64.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_eeabb38a482a4cffa42cbc6c108e544e = L.circle(
+                [52.5076242, 13.4277105],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_eeabb38a482a4cffa42cbc6c108e544e.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         243.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        76.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_aa5c52808e4b433a8458838217182b49 = L.circle(
+                [52.5075856, 13.4277046],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_aa5c52808e4b433a8458838217182b49.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         241.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        76.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_0379209da6e64dd8a9bc0b9f161303a1 = L.circle(
+                [52.5075068, 13.4276686],
+                {"bubblingMouseEvents": true, "color": "#0b8600ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0b8600ff", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 25, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_0379209da6e64dd8a9bc0b9f161303a1.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         177.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        75.0<b><div style="height:3px;"><br></div>Confirmed :</b>        9<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_6dbc93032ed74687a7a6c676cddfff4f = L.circle(
+                [52.5069968, 13.4273768],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 25, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_6dbc93032ed74687a7a6c676cddfff4f.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         214.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        63.0<b><div style="height:3px;"><br></div>Confirmed :</b>        9<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_1224be8189394b3c9e3fca3e27079727 = L.circle(
+                [52.5027066, 13.4246494],
+                {"bubblingMouseEvents": true, "color": "#ffd700ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffd700ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_1224be8189394b3c9e3fca3e27079727.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         127.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        67.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_7591a06ea8014813bc60843e106a34d8 = L.circle(
+                [52.5011593, 13.4237875],
+                {"bubblingMouseEvents": true, "color": "#85c200ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#85c200ff", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 25, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_7591a06ea8014813bc60843e106a34d8.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         160.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        61.0<b><div style="height:3px;"><br></div>Confirmed :</b>        11<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_38d34eb8e9af4392a57a1a8e33f34646 = L.circle(
+                [52.5000869, 13.4231604],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_38d34eb8e9af4392a57a1a8e33f34646.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         189.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        64.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_459aaf89ae5a497abbeb09e527cb7991 = L.circle(
+                [52.5000344, 13.4231317],
+                {"bubblingMouseEvents": true, "color": "#a1d100ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a1d100ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_459aaf89ae5a497abbeb09e527cb7991.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         156.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        76.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_055ffc4cc27d4ebf8dbc4e40ac5e9863 = L.circle(
+                [52.4999212, 13.4231225],
+                {"bubblingMouseEvents": true, "color": "#b0d800ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b0d800ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_055ffc4cc27d4ebf8dbc4e40ac5e9863.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         154.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        68.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_72bfab8140074553931619af6bf92fe8 = L.circle(
+                [52.4998224, 13.4230768],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_72bfab8140074553931619af6bf92fe8.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         279.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        67.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_3ba6a55a4c054ad28b80b9d899fc556d = L.circle(
+                [52.4997554, 13.4229783],
+                {"bubblingMouseEvents": true, "color": "#ffd500ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffd500ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_3ba6a55a4c054ad28b80b9d899fc556d.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         126.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        43.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_04891b559641443da14206232a4019c4 = L.circle(
+                [52.4997545, 13.4229487],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_04891b559641443da14206232a4019c4.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         193.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        59.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_8c3a38ca90a54515ab0d2c34858a0410 = L.circle(
+                [52.499715, 13.4228864],
+                {"bubblingMouseEvents": true, "color": "#ff0000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_8c3a38ca90a54515ab0d2c34858a0410.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         29.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        49.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_b944e9d1faa1445295cc50908c89bdf4 = L.circle(
+                [52.4989194, 13.4220285],
+                {"bubblingMouseEvents": true, "color": "#ffd700ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffd700ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_b944e9d1faa1445295cc50908c89bdf4.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         127.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        60.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_51e59b9a12ef4716bc1fbef9d7f9e0fb = L.circle(
+                [52.4952732, 13.4206977],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_51e59b9a12ef4716bc1fbef9d7f9e0fb.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         213.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        50.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_8b48600364ce46828f31fed6cc61127e = L.circle(
+                [52.495256, 13.4207156],
+                {"bubblingMouseEvents": true, "color": "#279400ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#279400ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_8b48600364ce46828f31fed6cc61127e.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         173.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        68.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_fb868a7342254d668a20aada5677649f = L.circle(
+                [52.4951305, 13.4208058],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_fb868a7342254d668a20aada5677649f.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         182.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        79.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_bf0138d21f544fa4b497292e4f1a4838 = L.circle(
+                [52.4950698, 13.420842],
+                {"bubblingMouseEvents": true, "color": "#6fb800ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6fb800ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_bf0138d21f544fa4b497292e4f1a4838.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         163.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        76.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_261c05b313c0484aa002f06d67f4dc3d = L.circle(
+                [52.4949739, 13.4209341],
+                {"bubblingMouseEvents": true, "color": "#048200ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#048200ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_261c05b313c0484aa002f06d67f4dc3d.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         178.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        55.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_4c29b125c3b2439a9aa04050debf6813 = L.circle(
+                [52.4949373, 13.4209694],
+                {"bubblingMouseEvents": true, "color": "#fffd00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fffd00ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_4c29b125c3b2439a9aa04050debf6813.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         142.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        61.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_1b63c516843e478ab72f62e5f19b7f80 = L.circle(
+                [52.4928091, 13.4222056],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_1b63c516843e478ab72f62e5f19b7f80.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         207.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        60.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_1cb11da54ed8449fba24851fadd6beae = L.circle(
+                [52.4927871, 13.4222393],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_1cb11da54ed8449fba24851fadd6beae.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         209.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        67.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_261749c199d84ba79ee3752f865e0add = L.circle(
+                [52.4925554, 13.4226303],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_261749c199d84ba79ee3752f865e0add.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         207.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        76.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_6d01d3ab149e440cb8a916ba83bf6074 = L.circle(
+                [52.4925155, 13.4226447],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_6d01d3ab149e440cb8a916ba83bf6074.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         197.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        61.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_c836260aa8844cd789be74dbe38c76e6 = L.circle(
+                [52.4920745, 13.4228105],
+                {"bubblingMouseEvents": true, "color": "#ffb900ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffb900ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_c836260aa8844cd789be74dbe38c76e6.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         115.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        81.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_4a28cc14e31e41c2b0b4d636527f85d0 = L.circle(
+                [52.4920465, 13.4227955],
+                {"bubblingMouseEvents": true, "color": "#ffa000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffa000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_4a28cc14e31e41c2b0b4d636527f85d0.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         106.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        68.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_b726d1e43683468ea863e57225c23e9c = L.circle(
+                [52.4920008, 13.4227991],
+                {"bubblingMouseEvents": true, "color": "#ffc800ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffc800ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_b726d1e43683468ea863e57225c23e9c.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         121.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        80.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_92bb71ee6adc4be39c2ced84a2b93a6a = L.circle(
+                [52.4919816, 13.4228228],
+                {"bubblingMouseEvents": true, "color": "#ffec00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffec00ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_92bb71ee6adc4be39c2ced84a2b93a6a.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         135.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        54.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_f201cad426d4408dae9ef577fb61d253 = L.circle(
+                [52.4919595, 13.4228403],
+                {"bubblingMouseEvents": true, "color": "#279400ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#279400ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_f201cad426d4408dae9ef577fb61d253.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         173.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        76.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_9008b7a69a3d4d56bfa4ef1069052efe = L.circle(
+                [52.4919236, 13.4228738],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_9008b7a69a3d4d56bfa4ef1069052efe.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         208.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        65.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_14da1077c6e04485b42ca1958730c34a = L.circle(
+                [52.4918417, 13.4229367],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_14da1077c6e04485b42ca1958730c34a.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         272.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        63.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_7dd60c259e994bdaaf4ba809a298c3e1 = L.circle(
+                [52.4916946, 13.4229473],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_7dd60c259e994bdaaf4ba809a298c3e1.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         260.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        54.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_a45945b0a3524b51a90faa062627fbcc = L.circle(
+                [52.4916535, 13.422966],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_a45945b0a3524b51a90faa062627fbcc.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         268.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        73.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_9e29a35ae78447a3912c8c72628bcef2 = L.circle(
+                [52.4915901, 13.4230024],
+                {"bubblingMouseEvents": true, "color": "#ffd000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffd000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_9e29a35ae78447a3912c8c72628bcef2.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         124.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        62.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_019652e5cfd541abb659ebe5546db833 = L.circle(
+                [52.4915401, 13.4230424],
+                {"bubblingMouseEvents": true, "color": "#ffb400ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffb400ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_019652e5cfd541abb659ebe5546db833.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         113.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        72.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_294a5517cb834916a125a46410045f0b = L.circle(
+                [52.4914996, 13.423066],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_294a5517cb834916a125a46410045f0b.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         222.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        68.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_3819911e95cf4282ad7ae074597ab968 = L.circle(
+                [52.4913157, 13.4232383],
+                {"bubblingMouseEvents": true, "color": "#369b00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#369b00ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_3819911e95cf4282ad7ae074597ab968.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         171.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        54.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_834206a30b944f54bf3342e89e1898f2 = L.circle(
+                [52.4912327, 13.4233744],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_834206a30b944f54bf3342e89e1898f2.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         234.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        76.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_f54c2435126f494eb0a6c261ff3b08ca = L.circle(
+                [52.4911274, 13.423568],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_f54c2435126f494eb0a6c261ff3b08ca.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         286.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        74.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_ba7f3e60c7a64458ba1b1b2ec07352d0 = L.circle(
+                [52.4910327, 13.4236902],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_ba7f3e60c7a64458ba1b1b2ec07352d0.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         205.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        68.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_54014edd720a4a24a3cbbd0be22e6cd7 = L.circle(
+                [52.4909715, 13.4237312],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_54014edd720a4a24a3cbbd0be22e6cd7.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         212.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        60.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_622aff18895743d2ae5a787eb6cd0051 = L.circle(
+                [52.4908404, 13.4238429],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_622aff18895743d2ae5a787eb6cd0051.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         190.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        62.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_3514fddfa5c74c97a663e1ab2ab3be9e = L.circle(
+                [52.4907673, 13.4239152],
+                {"bubblingMouseEvents": true, "color": "#ff0000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_3514fddfa5c74c97a663e1ab2ab3be9e.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         67.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        61.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_101f7ccdfdcc4281bd485a478de524fe = L.circle(
+                [52.4907264, 13.4239363],
+                {"bubblingMouseEvents": true, "color": "#ff0000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_101f7ccdfdcc4281bd485a478de524fe.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         64.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        76.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_28dc44bc0c024e49977ea4e02d0e2854 = L.circle(
+                [52.4906856, 13.4239646],
+                {"bubblingMouseEvents": true, "color": "#ff0b00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0b00ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_28dc44bc0c024e49977ea4e02d0e2854.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         74.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        50.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_0ff5c3e200024f23983fbfca19486078 = L.circle(
+                [52.4905911, 13.42402],
+                {"bubblingMouseEvents": true, "color": "#a8d400ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a8d400ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_0ff5c3e200024f23983fbfca19486078.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         155.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        56.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_298db14b40564fe4b67f9740001b92bc = L.circle(
+                [52.4905499, 13.4240444],
+                {"bubblingMouseEvents": true, "color": "#ff0000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_298db14b40564fe4b67f9740001b92bc.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         53.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        64.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_8cc85de6729144b593d8a253095aec9d = L.circle(
+                [52.4904115, 13.4241107],
+                {"bubblingMouseEvents": true, "color": "#ff0000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_8cc85de6729144b593d8a253095aec9d.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         68.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        28.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_d80152522dd3429c92ceda92cb6e1765 = L.circle(
+                [52.4903285, 13.4241301],
+                {"bubblingMouseEvents": true, "color": "#ff0000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_d80152522dd3429c92ceda92cb6e1765.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         25.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        60.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_8c7474a0b4f84ec79329ebe9f5015d79 = L.circle(
+                [52.4902193, 13.4241981],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_8c7474a0b4f84ec79329ebe9f5015d79.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         228.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        54.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_0c9fb0cdd66a4e7fb1f787665bbcc830 = L.circle(
+                [52.4901468, 13.4242572],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_0c9fb0cdd66a4e7fb1f787665bbcc830.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         242.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        67.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_86f25d511e0347a08c1d49f89a5d4bd7 = L.circle(
+                [52.4899036, 13.4243537],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_86f25d511e0347a08c1d49f89a5d4bd7.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         289.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        67.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_f96b972675bd4259814dbfa368d42703 = L.circle(
+                [52.4897057, 13.4244663],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_f96b972675bd4259814dbfa368d42703.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         213.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        59.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_daad4c3cd2224300b63779c16954a34d = L.circle(
+                [52.4896326, 13.424504],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_daad4c3cd2224300b63779c16954a34d.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         249.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        53.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_d3002bcd0c764e198c8f54d29ef0866a = L.circle(
+                [52.4895432, 13.4245403],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_d3002bcd0c764e198c8f54d29ef0866a.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         223.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        63.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_9851ddda38c143ccb4eabeb6b2e772d4 = L.circle(
+                [52.4894894, 13.4245707],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_9851ddda38c143ccb4eabeb6b2e772d4.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         208.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        66.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_9acaf601b88f47f587a347537175e814 = L.circle(
+                [52.4894296, 13.4245797],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_9acaf601b88f47f587a347537175e814.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         218.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        67.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_f6f7fb1238154e8e80e7df91e52cd10a = L.circle(
+                [52.4894009, 13.4245839],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_f6f7fb1238154e8e80e7df91e52cd10a.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         233.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        60.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_60c507ee75bb4190ba34288e5d978bf2 = L.circle(
+                [52.488746, 13.4248405],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_60c507ee75bb4190ba34288e5d978bf2.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         262.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        65.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_2456eb9bfae84076a1e5b07a7be344c9 = L.circle(
+                [52.4887133, 13.4248599],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_2456eb9bfae84076a1e5b07a7be344c9.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         243.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        59.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_83262df5e9e64cc684c8d8f4900a179b = L.circle(
+                [52.4886856, 13.4248719],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_83262df5e9e64cc684c8d8f4900a179b.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         239.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        70.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_1eddbbff43534282a336d59b19f96fe9 = L.circle(
+                [52.4886018, 13.4248903],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_1eddbbff43534282a336d59b19f96fe9.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         244.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        55.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_015e48e7078946c49813d9fe50f97547 = L.circle(
+                [52.488586, 13.4249044],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_015e48e7078946c49813d9fe50f97547.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         243.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        73.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_4ade409863b541f9a9bf3cbc16868258 = L.circle(
+                [52.4884178, 13.4248521],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_4ade409863b541f9a9bf3cbc16868258.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         274.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        81.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_38e9f2d7380d42f595c9f8fb8b950d7a = L.circle(
+                [52.4880677, 13.4250649],
+                {"bubblingMouseEvents": true, "color": "#ffb600ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffb600ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_38e9f2d7380d42f595c9f8fb8b950d7a.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         114.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        83.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_b3ea0c61a0ec42718486c9e8e8904b27 = L.circle(
+                [52.4876781, 13.4250594],
+                {"bubblingMouseEvents": true, "color": "#ffa400ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffa400ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_b3ea0c61a0ec42718486c9e8e8904b27.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         107.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        62.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_71d50962e84a46c6a1bf9b530d19d39a = L.circle(
+                [52.4875514, 13.4250401],
+                {"bubblingMouseEvents": true, "color": "#ff2c00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff2c00ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_71d50962e84a46c6a1bf9b530d19d39a.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         81.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        61.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_dbe15488beef4344bb4a499c556e3d3c = L.circle(
+                [52.4874172, 13.4250032],
+                {"bubblingMouseEvents": true, "color": "#ffa000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffa000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_dbe15488beef4344bb4a499c556e3d3c.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         106.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        55.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_e706373b796c4bbfa89a71f4d5704383 = L.circle(
+                [52.487361, 13.4249792],
+                {"bubblingMouseEvents": true, "color": "#ff0000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_e706373b796c4bbfa89a71f4d5704383.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         68.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        56.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_db241f369d6444c4a2395923316a76fc = L.circle(
+                [52.4872445, 13.4249416],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_db241f369d6444c4a2395923316a76fc.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         181.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        55.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_e72adb0f72c54697ad738df92a501d5d = L.circle(
+                [52.4871592, 13.4248942],
+                {"bubblingMouseEvents": true, "color": "#ff0000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_e72adb0f72c54697ad738df92a501d5d.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         46.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        49.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_d9bec387232049e4bf922b1f0156f107 = L.circle(
+                [52.4871181, 13.4248767],
+                {"bubblingMouseEvents": true, "color": "#ff1e00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff1e00ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_d9bec387232049e4bf922b1f0156f107.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         78.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        55.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_cd3bf7e0b38c443eba12b94caeed80ca = L.circle(
+                [52.4869942, 13.4248003],
+                {"bubblingMouseEvents": true, "color": "#ff2300ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff2300ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_cd3bf7e0b38c443eba12b94caeed80ca.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         79.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        52.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_1edb84627f6747228878625b597f05ca = L.circle(
+                [52.48696, 13.4247868],
+                {"bubblingMouseEvents": true, "color": "#ff2700ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff2700ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_1edb84627f6747228878625b597f05ca.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         80.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        50.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_058bf97940de4ce8982b4b13f504f8ab = L.circle(
+                [52.486922, 13.4247897],
+                {"bubblingMouseEvents": true, "color": "#ff1000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff1000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_058bf97940de4ce8982b4b13f504f8ab.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         75.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        52.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_de5b5241d129402e9ea6df72cb920dc0 = L.circle(
+                [52.4869025, 13.4247693],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_de5b5241d129402e9ea6df72cb920dc0.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         244.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        56.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_bf0f6a0347d74482b5db3603c8d29590 = L.circle(
+                [52.4868725, 13.4247375],
+                {"bubblingMouseEvents": true, "color": "#ff0000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_bf0f6a0347d74482b5db3603c8d29590.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         23.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        41.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_7f6ea75fccab4adb9705a5ea493a5c79 = L.circle(
+                [52.4862952, 13.4242911],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 25, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_7f6ea75fccab4adb9705a5ea493a5c79.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         210.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        63.0<b><div style="height:3px;"><br></div>Confirmed :</b>        16<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_0e35cfa795cd43f29f8fceff5b3d2259 = L.circle(
+                [52.4862593, 13.4242734],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_0e35cfa795cd43f29f8fceff5b3d2259.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         210.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        51.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_9c1bc5d96cdf454a825f4c9b5827b783 = L.circle(
+                [52.4845072, 13.4244547],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_9c1bc5d96cdf454a825f4c9b5827b783.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         236.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        44.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_3b78eb614cbe4c08b81927cd3385713e = L.circle(
+                [52.4844691, 13.4244683],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_3b78eb614cbe4c08b81927cd3385713e.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         234.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        61.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_f0a99073e14a428b855cc4f07e5a7572 = L.circle(
+                [52.4839745, 13.4247168],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 25, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_f0a99073e14a428b855cc4f07e5a7572.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         232.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        63.0<b><div style="height:3px;"><br></div>Confirmed :</b>        5<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_b376f8a709d142c7b501573fb338ea9d = L.circle(
+                [52.4836107, 13.4248871],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 25, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_b376f8a709d142c7b501573fb338ea9d.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         208.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        72.0<b><div style="height:3px;"><br></div>Confirmed :</b>        3<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_7e0a6f877c4f461192e92f4f2dabe5e5 = L.circle(
+                [52.4830185, 13.4249826],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 25, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_7e0a6f877c4f461192e92f4f2dabe5e5.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         203.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        60.0<b><div style="height:3px;"><br></div>Confirmed :</b>        2<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_b1ba7b509fb547d08b23ca578c114dd5 = L.circle(
+                [52.4821095, 13.4247995],
+                {"bubblingMouseEvents": true, "color": "#ff3a00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff3a00ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_b1ba7b509fb547d08b23ca578c114dd5.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         84.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        75.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_3be9d8a3c5bc4cb9a4580c3c93fd9469 = L.circle(
+                [52.482067, 13.4248123],
+                {"bubblingMouseEvents": true, "color": "#ff1000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff1000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_3be9d8a3c5bc4cb9a4580c3c93fd9469.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         75.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        61.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_8c2230f6fe054ad8a334b65149f6b5d2 = L.circle(
+                [52.4820296, 13.4248121],
+                {"bubblingMouseEvents": true, "color": "#ff3500ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff3500ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_8c2230f6fe054ad8a334b65149f6b5d2.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         83.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        54.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_a27690a05d6a4d31bdb7e228fa33b67b = L.circle(
+                [52.4819715, 13.42482],
+                {"bubblingMouseEvents": true, "color": "#ff4c00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4c00ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_a27690a05d6a4d31bdb7e228fa33b67b.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         88.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        74.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_2ed12b432144407b9c988164dda42fad = L.circle(
+                [52.4818514, 13.424832],
+                {"bubblingMouseEvents": true, "color": "#ff4800ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4800ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_2ed12b432144407b9c988164dda42fad.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         87.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        63.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_69742f494bd049e38d96b399f9ab72a8 = L.circle(
+                [52.4817756, 13.4248359],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_69742f494bd049e38d96b399f9ab72a8.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         183.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        75.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_e5719ed542104ef5b82bf59cad2aee72 = L.circle(
+                [52.4817448, 13.424828],
+                {"bubblingMouseEvents": true, "color": "#76bb00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#76bb00ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_e5719ed542104ef5b82bf59cad2aee72.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         162.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        54.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_167d4e9e384743e5ae7b7d485a713edc = L.circle(
+                [52.4817052, 13.4248244],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_167d4e9e384743e5ae7b7d485a713edc.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         185.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        64.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_5d1877f1305f4c6ebb7ac69949e33ea7 = L.circle(
+                [52.4816656, 13.4248402],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_5d1877f1305f4c6ebb7ac69949e33ea7.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         191.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        72.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_b586467f115547649a085e820dbc2df8 = L.circle(
+                [52.4816208, 13.424865],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_b586467f115547649a085e820dbc2df8.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         192.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        72.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_8635b8e9bcd840cea8ab6f94d848b248 = L.circle(
+                [52.4815778, 13.4248641],
+                {"bubblingMouseEvents": true, "color": "#f7fb00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f7fb00ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_8635b8e9bcd840cea8ab6f94d848b248.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         144.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        65.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_5fc7e1c642ea4690b13c3aed143e94c1 = L.circle(
+                [52.4815209, 13.4248928],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_5fc7e1c642ea4690b13c3aed143e94c1.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         261.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        74.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_fa003c1f16654014b5e725817b6dca52 = L.circle(
+                [52.4813874, 13.4249827],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_fa003c1f16654014b5e725817b6dca52.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         228.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        74.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_2f4906773df4418fbb0ed2dd6a135740 = L.circle(
+                [52.4813499, 13.4249953],
+                {"bubblingMouseEvents": true, "color": "#ff6d00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff6d00ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_2f4906773df4418fbb0ed2dd6a135740.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         95.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        78.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_065760fb3d6a4b80a61ea1b518e1bfb2 = L.circle(
+                [52.4813278, 13.4250107],
+                {"bubblingMouseEvents": true, "color": "#ff0700ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0700ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_065760fb3d6a4b80a61ea1b518e1bfb2.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         73.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        83.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_4bfc01108ab74a488d448c0d14d04230 = L.circle(
+                [52.4812963, 13.4250082],
+                {"bubblingMouseEvents": true, "color": "#ffaf00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffaf00ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_4bfc01108ab74a488d448c0d14d04230.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         111.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        69.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_c9cbc517057947f090cd7088451109bd = L.circle(
+                [52.4812819, 13.4250022],
+                {"bubblingMouseEvents": true, "color": "#ff6800ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff6800ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_c9cbc517057947f090cd7088451109bd.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         94.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        70.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_eaebcc1f19fc4aa4b92f60d93794de96 = L.circle(
+                [52.4812546, 13.4250024],
+                {"bubblingMouseEvents": true, "color": "#ff5600ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff5600ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_eaebcc1f19fc4aa4b92f60d93794de96.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         90.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        73.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_2f88a48bb12d4912b148fc34fe989ee2 = L.circle(
+                [52.4812147, 13.4249933],
+                {"bubblingMouseEvents": true, "color": "#ff3e00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff3e00ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_2f88a48bb12d4912b148fc34fe989ee2.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         85.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        51.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_f5b33cf57e7d4b3596bf2ac0a8093fd4 = L.circle(
+                [52.4811801, 13.4249865],
+                {"bubblingMouseEvents": true, "color": "#ff0000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_f5b33cf57e7d4b3596bf2ac0a8093fd4.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         44.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        77.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_ccaefeec65224e1fb482325ba93cc67e = L.circle(
+                [52.4800441, 13.4248939],
+                {"bubblingMouseEvents": true, "color": "#279400ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#279400ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_ccaefeec65224e1fb482325ba93cc67e.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         173.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        60.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_d2b4d78bb4b0464d8e5e57e41fb5a96c = L.circle(
+                [52.4798896, 13.4242954],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_d2b4d78bb4b0464d8e5e57e41fb5a96c.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         219.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        66.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_b7336f5b9b204bca8c2af2e705136f3e = L.circle(
+                [52.4798875, 13.4242344],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_b7336f5b9b204bca8c2af2e705136f3e.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         206.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        71.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_585f77360d7d4ad7af93028d86a583aa = L.circle(
+                [52.4798821, 13.4240122],
+                {"bubblingMouseEvents": true, "color": "#ff0000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_585f77360d7d4ad7af93028d86a583aa.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         63.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        49.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_4a2a5f34dd72413c97fcae6886386911 = L.circle(
+                [52.4798782, 13.4239618],
+                {"bubblingMouseEvents": true, "color": "#ff0200ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0200ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_4a2a5f34dd72413c97fcae6886386911.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         72.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        59.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_505c486993e84617a8122b0f2f14a2cb = L.circle(
+                [52.4798612, 13.4234347],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_505c486993e84617a8122b0f2f14a2cb.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         262.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        79.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_fc096dff3a2445eead1845fbe3c2ebb5 = L.circle(
+                [52.4798451, 13.4233728],
+                {"bubblingMouseEvents": true, "color": "#ffaf00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffaf00ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_fc096dff3a2445eead1845fbe3c2ebb5.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         111.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        65.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_467cf62b74cd49b68da6b33321cdda1a = L.circle(
+                [52.4798474, 13.4233136],
+                {"bubblingMouseEvents": true, "color": "#ff8900ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff8900ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_467cf62b74cd49b68da6b33321cdda1a.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         101.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        77.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_747a47414ca84554a7fd2f024f024a62 = L.circle(
+                [52.4798645, 13.4231656],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_747a47414ca84554a7fd2f024f024a62.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         247.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        59.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_02383a168e3d4a2eb1572c955096adc0 = L.circle(
+                [52.4798731, 13.4230625],
+                {"bubblingMouseEvents": true, "color": "#209000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#209000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_02383a168e3d4a2eb1572c955096adc0.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         174.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        64.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_132f9db61f5c439883e99696d0817873 = L.circle(
+                [52.4798742, 13.422989],
+                {"bubblingMouseEvents": true, "color": "#6fb800ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6fb800ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_132f9db61f5c439883e99696d0817873.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         163.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        73.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_50af0f012cc7432db6a29dd36ffdee9b = L.circle(
+                [52.4798828, 13.4229032],
+                {"bubblingMouseEvents": true, "color": "#a8d400ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a8d400ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_50af0f012cc7432db6a29dd36ffdee9b.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         155.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        75.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_2481b1ce7a19406d83fa857794afcc1e = L.circle(
+                [52.479878, 13.4228362],
+                {"bubblingMouseEvents": true, "color": "#dbed00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dbed00ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_2481b1ce7a19406d83fa857794afcc1e.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         148.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        75.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_6c96c9e6def44760a97d6786b5be3392 = L.circle(
+                [52.4798797, 13.422766],
+                {"bubblingMouseEvents": true, "color": "#93c900ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#93c900ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_6c96c9e6def44760a97d6786b5be3392.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         158.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        72.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_506e4883276844a19039508e5e92bdd5 = L.circle(
+                [52.4798783, 13.4227182],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_506e4883276844a19039508e5e92bdd5.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         187.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        55.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_d6aaa07936be4b05a847a3e879f1d286 = L.circle(
+                [52.4798801, 13.4226799],
+                {"bubblingMouseEvents": true, "color": "#3d9f00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3d9f00ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_d6aaa07936be4b05a847a3e879f1d286.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         170.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        56.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_7034ff4e18f74c3b8fcea9e9f54ef6b9 = L.circle(
+                [52.4798856, 13.4226404],
+                {"bubblingMouseEvents": true, "color": "#44a200ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#44a200ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_7034ff4e18f74c3b8fcea9e9f54ef6b9.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         169.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        68.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_51f900640fd84caab4c0cc2234a5a384 = L.circle(
+                [52.4798839, 13.4226071],
+                {"bubblingMouseEvents": true, "color": "#3d9f00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3d9f00ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_51f900640fd84caab4c0cc2234a5a384.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         170.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        77.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_dda80c00875f4993b2d439e174675144 = L.circle(
+                [52.4798827, 13.4225631],
+                {"bubblingMouseEvents": true, "color": "#198d00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#198d00ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_dda80c00875f4993b2d439e174675144.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         175.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        72.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_e14b55ac348d45d694cf0493e420eab9 = L.circle(
+                [52.4798736, 13.4225292],
+                {"bubblingMouseEvents": true, "color": "#128900ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#128900ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_e14b55ac348d45d694cf0493e420eab9.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         176.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        63.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_afb9d6f3d833460b8416bee5482ecdbe = L.circle(
+                [52.4798725, 13.4224911],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_afb9d6f3d833460b8416bee5482ecdbe.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         224.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        70.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_180e291043814219949a357c5b6e7f3e = L.circle(
+                [52.479868, 13.4224651],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.3, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cf2faf3146e7452791bb44118dc2a4ae);
+        
+    
+            circle_180e291043814219949a357c5b6e7f3e.bindTooltip(
+                `<div>
+                     <b>Überholvorgang Left:</b>         273.0<b><div style="height:3px;"><br></div>Überholvorgang Right:</b>        78.0<b><div style="height:3px;"><br></div>Confirmed :</b>        0<b><div style="height:3px;"><br></div>Marked :</b>        nan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+    var color_map_cdf73fd060e141ae9b52472edfdb358f = {};
+
+    
+    color_map_cdf73fd060e141ae9b52472edfdb358f.color = d3.scale.threshold()
+              .domain([0.0, 0.501002004008016, 1.002004008016032, 1.503006012024048, 2.004008016032064, 2.50501002004008, 3.006012024048096, 3.5070140280561124, 4.008016032064128, 4.509018036072145, 5.01002004008016, 5.511022044088176, 6.012024048096192, 6.513026052104208, 7.014028056112225, 7.515030060120241, 8.016032064128256, 8.517034068136272, 9.01803607214429, 9.519038076152304, 10.02004008016032, 10.521042084168336, 11.022044088176353, 11.52304609218437, 12.024048096192384, 12.525050100200401, 13.026052104208416, 13.527054108216433, 14.02805611222445, 14.529058116232465, 15.030060120240481, 15.531062124248496, 16.03206412825651, 16.53306613226453, 17.034068136272545, 17.53507014028056, 18.03607214428858, 18.537074148296593, 19.03807615230461, 19.539078156312627, 20.04008016032064, 20.541082164328657, 21.04208416833667, 21.54308617234469, 22.044088176352705, 22.54509018036072, 23.04609218436874, 23.547094188376754, 24.04809619238477, 24.549098196392787, 25.050100200400802, 25.551102204408817, 26.052104208416832, 26.55310621242485, 27.054108216432866, 27.55511022044088, 28.0561122244489, 28.557114228456914, 29.05811623246493, 29.559118236472944, 30.060120240480963, 30.561122244488978, 31.062124248496993, 31.56312625250501, 32.06412825651302, 32.565130260521045, 33.06613226452906, 33.567134268537075, 34.06813627254509, 34.569138276553105, 35.07014028056112, 35.57114228456914, 36.07214428857716, 36.57314629258517, 37.07414829659319, 37.5751503006012, 38.07615230460922, 38.57715430861723, 39.078156312625254, 39.57915831663327, 40.08016032064128, 40.5811623246493, 41.08216432865731, 41.58316633266533, 42.08416833667334, 42.585170340681366, 43.08617234468938, 43.587174348697395, 44.08817635270541, 44.589178356713425, 45.09018036072144, 45.591182364729455, 46.09218436873748, 46.59318637274549, 47.09418837675351, 47.59519038076152, 48.09619238476954, 48.59719438877755, 49.098196392785574, 49.59919839679359, 50.100200400801604, 50.60120240480962, 51.102204408817634, 51.60320641282565, 52.104208416833664, 52.605210420841686, 53.1062124248497, 53.607214428857716, 54.10821643286573, 54.609218436873746, 55.11022044088176, 55.611222444889776, 56.1122244488978, 56.61322645290581, 57.11422845691383, 57.61523046092184, 58.11623246492986, 58.61723446893787, 59.11823647294589, 59.61923847695391, 60.120240480961925, 60.62124248496994, 61.122244488977955, 61.62324649298597, 62.124248496993985, 62.62525050100201, 63.12625250501002, 63.62725450901804, 64.12825651302605, 64.62925851703407, 65.13026052104209, 65.6312625250501, 66.13226452905812, 66.63326653306613, 67.13426853707415, 67.63527054108216, 68.13627254509018, 68.6372745490982, 69.13827655310621, 69.63927855711422, 70.14028056112224, 70.64128256513025, 71.14228456913828, 71.6432865731463, 72.14428857715431, 72.64529058116233, 73.14629258517034, 73.64729458917836, 74.14829659318637, 74.64929859719439, 75.1503006012024, 75.65130260521042, 76.15230460921843, 76.65330661322645, 77.15430861723446, 77.65531062124248, 78.15631262525051, 78.65731462925852, 79.15831663326654, 79.65931863727455, 80.16032064128257, 80.66132264529058, 81.1623246492986, 81.66332665330661, 82.16432865731463, 82.66533066132264, 83.16633266533066, 83.66733466933867, 84.16833667334669, 84.66933867735472, 85.17034068136273, 85.67134268537075, 86.17234468937876, 86.67334669338678, 87.17434869739479, 87.6753507014028, 88.17635270541082, 88.67735470941884, 89.17835671342685, 89.67935871743487, 90.18036072144288, 90.6813627254509, 91.18236472945891, 91.68336673346694, 92.18436873747495, 92.68537074148297, 93.18637274549098, 93.687374749499, 94.18837675350701, 94.68937875751503, 95.19038076152304, 95.69138276553106, 96.19238476953907, 96.69338677354709, 97.1943887775551, 97.69539078156312, 98.19639278557115, 98.69739478957916, 99.19839679358718, 99.6993987975952, 100.20040080160321, 100.70140280561122, 101.20240480961924, 101.70340681362725, 102.20440881763527, 102.70541082164328, 103.2064128256513, 103.70741482965931, 104.20841683366733, 104.70941883767534, 105.21042084168337, 105.71142284569139, 106.2124248496994, 106.71342685370742, 107.21442885771543, 107.71543086172345, 108.21643286573146, 108.71743486973948, 109.21843687374749, 109.71943887775551, 110.22044088176352, 110.72144288577154, 111.22244488977955, 111.72344689378758, 112.2244488977956, 112.72545090180361, 113.22645290581163, 113.72745490981964, 114.22845691382766, 114.72945891783567, 115.23046092184369, 115.7314629258517, 116.23246492985972, 116.73346693386773, 117.23446893787575, 117.73547094188376, 118.23647294589178, 118.7374749498998, 119.23847695390782, 119.73947895791584, 120.24048096192385, 120.74148296593187, 121.24248496993988, 121.7434869739479, 122.24448897795591, 122.74549098196393, 123.24649298597194, 123.74749498997996, 124.24849699398797, 124.74949899799599, 125.25050100200401, 125.75150300601203, 126.25250501002004, 126.75350701402806, 127.25450901803607, 127.75551102204409, 128.2565130260521, 128.75751503006012, 129.25851703406815, 129.75951903807615, 130.26052104208418, 130.76152304609218, 131.2625250501002, 131.7635270541082, 132.26452905811624, 132.76553106212424, 133.26653306613227, 133.76753507014027, 134.2685370741483, 134.7695390781563, 135.27054108216433, 135.77154308617236, 136.27254509018036, 136.7735470941884, 137.2745490981964, 137.77555110220442, 138.27655310621242, 138.77755511022045, 139.27855711422845, 139.77955911823648, 140.28056112224448, 140.7815631262525, 141.2825651302605, 141.78356713426854, 142.28456913827657, 142.78557114228457, 143.2865731462926, 143.7875751503006, 144.28857715430863, 144.78957915831663, 145.29058116232466, 145.79158316633266, 146.2925851703407, 146.7935871743487, 147.29458917835672, 147.79559118236472, 148.29659318637275, 148.79759519038078, 149.29859719438878, 149.7995991983968, 150.3006012024048, 150.80160320641284, 151.30260521042084, 151.80360721442887, 152.30460921843687, 152.8056112224449, 153.3066132264529, 153.80761523046093, 154.30861723446893, 154.80961923847696, 155.31062124248496, 155.81162324649299, 156.31262525050101, 156.81362725450902, 157.31462925851704, 157.81563126252505, 158.31663326653307, 158.81763527054107, 159.3186372745491, 159.8196392785571, 160.32064128256513, 160.82164328657313, 161.32264529058116, 161.82364729458916, 162.3246492985972, 162.82565130260522, 163.32665330661322, 163.82765531062125, 164.32865731462925, 164.82965931863728, 165.33066132264528, 165.8316633266533, 166.3326653306613, 166.83366733466934, 167.33466933867734, 167.83567134268537, 168.33667334669337, 168.8376753507014, 169.33867735470943, 169.83967935871743, 170.34068136272546, 170.84168336673346, 171.3426853707415, 171.8436873747495, 172.34468937875752, 172.84569138276552, 173.34669338677355, 173.84769539078155, 174.34869739478958, 174.84969939879758, 175.3507014028056, 175.85170340681364, 176.35270541082164, 176.85370741482967, 177.35470941883767, 177.8557114228457, 178.3567134268537, 178.85771543086173, 179.35871743486973, 179.85971943887776, 180.36072144288576, 180.8617234468938, 181.3627254509018, 181.86372745490982, 182.36472945891782, 182.86573146292585, 183.36673346693388, 183.86773547094188, 184.3687374749499, 184.8697394789579, 185.37074148296594, 185.87174348697394, 186.37274549098197, 186.87374749498997, 187.374749498998, 187.875751503006, 188.37675350701403, 188.87775551102203, 189.37875751503006, 189.8797595190381, 190.3807615230461, 190.88176352705412, 191.38276553106212, 191.88376753507015, 192.38476953907815, 192.88577154308618, 193.38677354709418, 193.8877755511022, 194.3887775551102, 194.88977955911824, 195.39078156312624, 195.89178356713427, 196.3927855711423, 196.8937875751503, 197.39478957915833, 197.89579158316633, 198.39679358717436, 198.89779559118236, 199.3987975951904, 199.8997995991984, 200.40080160320642, 200.90180360721442, 201.40280561122245, 201.90380761523045, 202.40480961923848, 202.9058116232465, 203.4068136272545, 203.90781563126254, 204.40881763527054, 204.90981963927857, 205.41082164328657, 205.9118236472946, 206.4128256513026, 206.91382765531063, 207.41482965931863, 207.91583166332666, 208.41683366733466, 208.9178356713427, 209.4188376753507, 209.91983967935872, 210.42084168336675, 210.92184368737475, 211.42284569138278, 211.92384769539078, 212.4248496993988, 212.9258517034068, 213.42685370741484, 213.92785571142284, 214.42885771543087, 214.92985971943887, 215.4308617234469, 215.9318637274549, 216.43286573146293, 216.93386773547095, 217.43486973947896, 217.93587174348698, 218.43687374749499, 218.93787575150301, 219.43887775551102, 219.93987975951904, 220.44088176352705, 220.94188376753507, 221.44288577154308, 221.9438877755511, 222.4448897795591, 222.94589178356713, 223.44689378757516, 223.94789579158316, 224.4488977955912, 224.9498997995992, 225.45090180360722, 225.95190380761522, 226.45290581162325, 226.95390781563125, 227.45490981963928, 227.95591182364728, 228.4569138276553, 228.9579158316633, 229.45891783567134, 229.95991983967937, 230.46092184368737, 230.9619238476954, 231.4629258517034, 231.96392785571143, 232.46492985971943, 232.96593186372746, 233.46693386773546, 233.9679358717435, 234.4689378757515, 234.96993987975952, 235.47094188376752, 235.97194388777555, 236.47294589178355, 236.97394789579158, 237.4749498997996, 237.9759519038076, 238.47695390781564, 238.97795591182364, 239.47895791583167, 239.97995991983967, 240.4809619238477, 240.9819639278557, 241.48296593186373, 241.98396793587173, 242.48496993987976, 242.98597194388776, 243.4869739478958, 243.98797595190382, 244.48897795591182, 244.98997995991985, 245.49098196392785, 245.99198396793588, 246.49298597194388, 246.9939879759519, 247.4949899799599, 247.99599198396794, 248.49699398797594, 248.99799599198397, 249.49899799599197, 250.0])
+              .range(['#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0000ff', '#ff0300ff', '#ff0500ff', '#ff0700ff', '#ff0a00ff', '#ff0c00ff', '#ff0e00ff', '#ff1100ff', '#ff1300ff', '#ff1500ff', '#ff1800ff', '#ff1a00ff', '#ff1c00ff', '#ff1f00ff', '#ff2100ff', '#ff2300ff', '#ff2600ff', '#ff2800ff', '#ff2a00ff', '#ff2d00ff', '#ff2f00ff', '#ff3100ff', '#ff3400ff', '#ff3600ff', '#ff3800ff', '#ff3b00ff', '#ff3d00ff', '#ff3f00ff', '#ff4200ff', '#ff4400ff', '#ff4600ff', '#ff4900ff', '#ff4b00ff', '#ff4d00ff', '#ff5000ff', '#ff5200ff', '#ff5400ff', '#ff5600ff', '#ff5900ff', '#ff5b00ff', '#ff5d00ff', '#ff6000ff', '#ff6200ff', '#ff6400ff', '#ff6700ff', '#ff6900ff', '#ff6b00ff', '#ff6e00ff', '#ff7000ff', '#ff7200ff', '#ff7500ff', '#ff7700ff', '#ff7900ff', '#ff7c00ff', '#ff7e00ff', '#ff8000ff', '#ff8300ff', '#ff8500ff', '#ff8700ff', '#ff8a00ff', '#ff8c00ff', '#ff8e00ff', '#ff9100ff', '#ff9300ff', '#ff9500ff', '#ff9800ff', '#ff9a00ff', '#ff9c00ff', '#ff9f00ff', '#ffa100ff', '#ffa300ff', '#ffa500ff', '#ffa700ff', '#ffa800ff', '#ffa900ff', '#ffaa00ff', '#ffac00ff', '#ffad00ff', '#ffae00ff', '#ffaf00ff', '#ffb100ff', '#ffb200ff', '#ffb300ff', '#ffb500ff', '#ffb600ff', '#ffb700ff', '#ffb800ff', '#ffba00ff', '#ffbb00ff', '#ffbc00ff', '#ffbd00ff', '#ffbf00ff', '#ffc000ff', '#ffc100ff', '#ffc200ff', '#ffc400ff', '#ffc500ff', '#ffc600ff', '#ffc800ff', '#ffc900ff', '#ffca00ff', '#ffcb00ff', '#ffcd00ff', '#ffce00ff', '#ffcf00ff', '#ffd000ff', '#ffd200ff', '#ffd300ff', '#ffd400ff', '#ffd500ff', '#ffd700ff', '#ffd800ff', '#ffd900ff', '#ffdb00ff', '#ffdc00ff', '#ffdd00ff', '#ffde00ff', '#ffe000ff', '#ffe100ff', '#ffe200ff', '#ffe300ff', '#ffe500ff', '#ffe600ff', '#ffe700ff', '#ffe900ff', '#ffea00ff', '#ffeb00ff', '#ffec00ff', '#ffee00ff', '#ffef00ff', '#fff000ff', '#fff100ff', '#fff300ff', '#fff400ff', '#fff500ff', '#fff600ff', '#fff800ff', '#fff900ff', '#fffa00ff', '#fffc00ff', '#fffd00ff', '#fffe00ff', '#ffff00ff', '#fcfe00ff', '#f9fc00ff', '#f5fa00ff', '#f2f900ff', '#eef700ff', '#eaf500ff', '#e7f300ff', '#e3f100ff', '#e0f000ff', '#dcee00ff', '#d9ec00ff', '#d5ea00ff', '#d1e900ff', '#cee700ff', '#cae500ff', '#c7e300ff', '#c3e100ff', '#bfe000ff', '#bcde00ff', '#b8dc00ff', '#b5da00ff', '#b1d800ff', '#add700ff', '#aad500ff', '#a6d300ff', '#a3d100ff', '#9fcf00ff', '#9bce00ff', '#98cc00ff', '#94ca00ff', '#91c800ff', '#8dc700ff', '#8ac500ff', '#86c300ff', '#82c100ff', '#7fbf00ff', '#7bbe00ff', '#78bc00ff', '#74ba00ff', '#70b800ff', '#6db600ff', '#69b500ff', '#66b300ff', '#62b100ff', '#5eaf00ff', '#5bad00ff', '#57ac00ff', '#54aa00ff', '#50a800ff', '#4ca600ff', '#49a500ff', '#45a300ff', '#42a100ff', '#3e9f00ff', '#3a9d00ff', '#379c00ff', '#339a00ff', '#309800ff', '#2c9600ff', '#299400ff', '#259300ff', '#219100ff', '#1e8f00ff', '#1a8d00ff', '#178b00ff', '#138a00ff', '#0f8800ff', '#0c8600ff', '#088400ff', '#058300ff', '#018100ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff', '#008000ff']);
+    
+
+    color_map_cdf73fd060e141ae9b52472edfdb358f.x = d3.scale.linear()
+              .domain([0.0, 250.0])
+              .range([0, 400]);
+
+    color_map_cdf73fd060e141ae9b52472edfdb358f.legend = L.control({position: 'topright'});
+    color_map_cdf73fd060e141ae9b52472edfdb358f.legend.onAdd = function (map) {var div = L.DomUtil.create('div', 'legend'); return div};
+    color_map_cdf73fd060e141ae9b52472edfdb358f.legend.addTo(map_a94ca3b4e1b3486297ff94fd0f3460b0);
+
+    color_map_cdf73fd060e141ae9b52472edfdb358f.xAxis = d3.svg.axis()
+        .scale(color_map_cdf73fd060e141ae9b52472edfdb358f.x)
+        .orient("top")
+        .tickSize(1)
+        .tickValues([0.0, 35.714285714285715, 71.42857142857143, 107.14285714285714, 142.85714285714286, 178.57142857142858, 214.28571428571428, 250.0]);
+
+    color_map_cdf73fd060e141ae9b52472edfdb358f.svg = d3.select(".legend.leaflet-control").append("svg")
+        .attr("id", 'legend')
+        .attr("width", 450)
+        .attr("height", 40);
+
+    color_map_cdf73fd060e141ae9b52472edfdb358f.g = color_map_cdf73fd060e141ae9b52472edfdb358f.svg.append("g")
+        .attr("class", "key")
+        .attr("transform", "translate(25,16)");
+
+    color_map_cdf73fd060e141ae9b52472edfdb358f.g.selectAll("rect")
+        .data(color_map_cdf73fd060e141ae9b52472edfdb358f.color.range().map(function(d, i) {
+          return {
+            x0: i ? color_map_cdf73fd060e141ae9b52472edfdb358f.x(color_map_cdf73fd060e141ae9b52472edfdb358f.color.domain()[i - 1]) : color_map_cdf73fd060e141ae9b52472edfdb358f.x.range()[0],
+            x1: i < color_map_cdf73fd060e141ae9b52472edfdb358f.color.domain().length ? color_map_cdf73fd060e141ae9b52472edfdb358f.x(color_map_cdf73fd060e141ae9b52472edfdb358f.color.domain()[i]) : color_map_cdf73fd060e141ae9b52472edfdb358f.x.range()[1],
+            z: d
+          };
+        }))
+      .enter().append("rect")
+        .attr("height", 10)
+        .attr("x", function(d) { return d.x0; })
+        .attr("width", function(d) { return d.x1 - d.x0; })
+        .style("fill", function(d) { return d.z; });
+
+    color_map_cdf73fd060e141ae9b52472edfdb358f.g.call(color_map_cdf73fd060e141ae9b52472edfdb358f.xAxis).append("text")
+        .attr("class", "caption")
+        .attr("y", 21)
+        .text('Überholabstand [cm], Bestätigte Überholvorgänge: großer Marker');
+    
+            var layer_control_14b37773daf3453eb770646d95f60fd0 = {
+                base_layers : {
+                    "Carto Light" : tile_layer_cda5015c81a44fa48faa1aa43eeb2667,
+                    "Esri Satellite" : tile_layer_03b542a596564e8da74dc57b24b87c0e,
+                    "OpenCycleMap" : tile_layer_febd70d83a024123928cc922b5439011,
+                },
+                overlays :  {
+                    "ueberholdaten" : feature_group_cf2faf3146e7452791bb44118dc2a4ae,
+                },
+            };
+            L.control.layers(
+                layer_control_14b37773daf3453eb770646d95f60fd0.base_layers,
+                layer_control_14b37773daf3453eb770646d95f60fd0.overlays,
+                {"autoZIndex": true, "collapsed": false, "position": "bottomleft"}
+            ).addTo(map_a94ca3b4e1b3486297ff94fd0f3460b0);
+            tile_layer_03b542a596564e8da74dc57b24b87c0e.remove();
+            tile_layer_febd70d83a024123928cc922b5439011.remove();
+            tile_layer_cda5015c81a44fa48faa1aa43eeb2667.remove();
+        
+</script>
