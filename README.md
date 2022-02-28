@@ -20,7 +20,7 @@ Um ein Gefühl für die Outpudaten zu bekommen, habe ich hier den Track einer Fa
 
 https://radverkehr.github.io/OpenBikeSensor_Analysis/viz/myFirstOBSanalysis.html
 
-
+https://radverkehr.github.io/OpenBikeSensor_Analysis/viz/mySecondOBSanalysis_fixedWrongSonicValues
 
 
 
