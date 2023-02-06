@@ -10,9 +10,9 @@ Auf den jeweiligen [Portalen](https://forum.openbikesensor.org/t/uebersicht-verf
 
 ###### Code
 
-- [Generelle Übersicht und zeitabhängige Analyse](https://nbviewer.org/github/radverkehr/OpenBikeSensor_Analysis/blob/gh-pages/code/publicdata_analysis/obs_publicData_overview_v03.ipynb)
-- [Zusammenhang von Messwert nach links und rechts](https://nbviewer.org/github/radverkehr/OpenBikeSensor_Analysis/blob/gh-pages/code/publicdata_analysis/obs_publicData_leftRight_v03.ipynb) 
-- [Verknüpfung und Analyse der OBS Daten mit OpenStreetMap Attributen](https://nbviewer.org/github/radverkehr/OpenBikeSensor_Analysis/blob/gh-pages/code/publicdata_analysis/obs_publicData_OSM_analysis_Germany_v03.ipynb)
+- [Generelle Übersicht und zeitabhängige Analyse](https://nbviewer.org/github/radverkehr/OpenBikeSensor_Analysis/blob/main/code/publicdata_analysis/obs_publicData_overview_v03.ipynb)
+- [Zusammenhang von Messwert nach links und rechts](https://nbviewer.org/github/radverkehr/OpenBikeSensor_Analysis/blob/main/code/publicdata_analysis/obs_publicData_leftRight_v03.ipynb) 
+- [Verknüpfung und Analyse der OBS Daten mit OpenStreetMap Attributen](https://nbviewer.org/github/radverkehr/OpenBikeSensor_Analysis/blob/main/code/publicdata_analysis/obs_publicData_OSM_analysis_Germany_v03.ipynb)
 
 
 
